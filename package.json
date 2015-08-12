@@ -5,6 +5,7 @@
   "author": "joeynebula <joey.baker@waterfield.com>",
   "description": "A simple helpful robot for your Company",
   "dependencies": {
+    "cleverbot": "^1.0.4",
     "hubot": "^2.13.2",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.1.5",
