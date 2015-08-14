@@ -1,3 +1,4 @@
+
 // Description:
 //   Allows you to chat with hubot as a proxy to cleverbot
 //
@@ -97,7 +98,9 @@ module.exports = function(robot) {
     robot.respond(/chat (.*)/i, function(msg) {
         var cleverbot = new Cleverbot();
         cleverbot.write(msg.match[1], function(answer){
-            msg.send(answer['message']);
+          message = answer['message'];
+          clean = message.replace(/<\/?[^>]+(>|$)/g, "");
+            msg.send(clean);
         });
     });
 };
