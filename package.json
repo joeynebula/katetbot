@@ -22,7 +22,8 @@
     "hubot-slack": "^3.3.0",
     "hubot-thank-you": "0.0.3",
     "hubot-youtube": "^1.0.1",
-    "cleverbot-node": "0.1.1"
+    "cleverbot-node": "0.1.1",
+    "nodemailer": "0.5.2"
   },
   "engines": {
     "node": "0.10.x"
