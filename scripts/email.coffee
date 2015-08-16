@@ -53,15 +53,9 @@ module.exports = (robot) ->
       msg.send 'Ok. I just initialized a mailing pool.'
 
   # Respond to an email command
-  robot.respond ///
-    tell joey to\s+ # The word email
-    ( # Any amount of the following
-      \s(\')[^\']*(\') | # Single quoted subject line
-      \s(\")[^\"]*(\") | # Double quoted subject line
-    )+
-  ///i, (msg) ->
+  robot.respond /(tell joey to) (\'...*\')/i, (msg) ->
     mailto  = process.env.TRELLO_EMAIL_ADDRESS
-    subject = msg.match[0].match(/\s(\')[^\']*(\')|\s\")[^\"]*(\")/i)
+    subject = msg.match[0]
     subject = subject[0].replace(/^\s*/g, '').trim().replace(/^(\'|\")|(\'|\")$/g, '')
     message = "Tello task from lauren"
     # Create an object to inform our mailing procedure
