@@ -66,7 +66,7 @@ module.exports = (robot) ->
     message = "Tello task from lauren"
     # Create an object to inform our mailing procedure
     obj = {
-      from: "joeybake@gmail.com",
+      from: process.env.HUBOT_EMAIL_USER,
       to: mailto,
       subject: subject or "Just a friendly update from Factals"
       text: message or ""
