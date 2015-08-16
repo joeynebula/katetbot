@@ -54,6 +54,7 @@ module.exports = (robot) ->
 
   # Respond to an email command
   robot.respond /(tell joey to) (\'...*\')/i, (msg) ->
+    msg.send "I got this far"
     mailto  = process.env.TRELLO_EMAIL_ADDRESS
     subject = msg.match[1]
     msg.send "I got this far"
