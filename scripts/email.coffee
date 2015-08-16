@@ -56,6 +56,7 @@ module.exports = (robot) ->
   robot.respond /(tell joey to) (\'...*\')/i, (msg) ->
     mailto  = process.env.TRELLO_EMAIL_ADDRESS
     subject = msg.match[0]
+    msg.send "I got this far"
   #  subject = subject[0].replace(/^\s*/g, '').trim().replace(/^(\'|\")|(\'|\")$/g, '')
     message = "Tello task from lauren"
     # Create an object to inform our mailing procedure
