@@ -54,7 +54,7 @@ doSearch = (msg) ->
     result_type: 'recent'
 
   twit.get 'search/tweets', searchConfig, (err, reply) ->
-    return msg.send "Error retrieving tweets!" if err
+    return msg.send "Error retrieving tweets! #{err}" if err
     return msg.send "No results returned!" unless reply?.statuses?.length
 
     statuses = reply.statuses
