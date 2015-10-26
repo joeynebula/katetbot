@@ -85,7 +85,8 @@ class Reminder
 
   dueDate: ->
     dueDate = new Date @due
-    dueDate.toLocaleString()
+    options = { timeZone: 'America/Chicago', timeZoneName: 'short' };
+    dueDate.toLocaleString('en-us', options)
 
 module.exports = (robot) ->
 
