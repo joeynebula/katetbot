@@ -11,7 +11,7 @@
 #   hubot remind <person> in <time> to <action> - Set a reminder in <time> to do an <action> <time> is in the format 1 day, 2 hours, 5 minutes etc. Time segments are optional, as are commas
 #
 # Author:
-#   whitman 
+#   whitman
 
 class Reminders
   constructor: (@robot) ->
@@ -97,7 +97,7 @@ module.exports = (robot) ->
     action = msg.match[4]
     users = robot.brain.usersForFuzzyName(who)
     if users.length is 1
-    user = users[0]
+      user = users[0]
     msg.envelope.user = user
     reminder = new Reminder msg.envelope, time, action
     reminders.add reminder
