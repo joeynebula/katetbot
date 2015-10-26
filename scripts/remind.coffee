@@ -101,4 +101,4 @@ module.exports = (robot) ->
     msg.envelope.user = user
     reminder = new Reminder msg.envelope, time, action
     reminders.add reminder
-    msg.send 'I\'ll remind ' + who +' to ' + action + ' on ' + reminder.dueDate()
+    msg.send 'I\'ll remind them to ' + action + ' on ' + reminder.dueDate()
