@@ -65,3 +65,9 @@ module.exports = (robot) ->
         points[username] ?= 0
 
         msg.send username + ' Has ' + points[username] + ' Points'
+
+    robot.respond /what is the score\??/i, (msg) ->
+        message = ""
+        for key, value of points
+          message += "#{key} has #{value} points\n"
+        msg.send message + points.stringify
