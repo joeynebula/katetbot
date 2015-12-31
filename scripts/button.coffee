@@ -6,6 +6,6 @@
 module.exports = (robot) ->
   robot.router.post '/hubot/button-press/:room', (req, res) ->
     room = req.params.room
-    message = "Joey pushed his damn button again."
+    message = req.params.message
     robot.messageRoom room, message
     res.end()
