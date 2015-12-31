@@ -6,6 +6,7 @@
 module.exports = (robot) ->
   robot.router.post '/hubot/button-press/:room', (req, res) ->
     room = req.params.room
-    message = req.body.message
+    data = if req.body.payload? then JSON.parse req.body.payload else req.body
+    message = data.message
     robot.messageRoom room, message
     res.end()
